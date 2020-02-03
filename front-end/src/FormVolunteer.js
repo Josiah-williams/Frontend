@@ -122,4 +122,5 @@ export default function FormBusiness() {
         </Column>
         </Container>
     )
-}
+
+  }

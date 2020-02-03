@@ -2,10 +2,8 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import './App.css';
-import FormBusiness from './FormBusiness';
-import FormVolunteer from './FormVolunteer';
-import SignUpBusiness from './SignUpBusiness';
-import SignUpVolunteer from './SignUpVolunteer';
+
+import login from './Login';
 
 const Box = styled.div`
 display: flex;
@@ -33,14 +31,19 @@ margin: -3px 0;
 `
 
 const Button = styled.button`
-background: white;
-border: 2px solid black;
-border-radius: 5px;
-padding: 25px;
+color: #EEEEEE;
+background-color: #2723EC;
+    width: 150px;
+    height: 30 px;
+    text-align: center;
+    border-radius: 10% / 50%;;
+    margin-left: 5%;
+    margin-right: 30%;
+    font-size: 20px
 `
-
-
-
+const Span = styled.span`
+padding-bottom = 50px;
+`
 
 function App() {
 
@@ -53,34 +56,15 @@ function App() {
       <Container>
         <Switch>
         <Route exact path="/">
-      <h1>Sign Up!</h1>
+      <h1>Welcome to Replate!</h1>
       <div className="Boxes">
-      <Box>
-        <Link to="/business"><Button className="hover"></Button></Link>
-        <h3>I'm a business</h3>
-        <p>I want to donate food</p>
-      </Box>
-      <Box>
-        <Link to="/volunteer"><Button className="hover"></Button></Link>
+      
+        <Link to="/Login"><Button className="hover">Login</Button></Link>
         
-        <h3>I'm a volunteer</h3>
-        <p>I want to receive donations</p>
-      </Box>
+        <span class="psw">Don't have an account? Click <a href="#">here</a> to sign up</span>
+    
       </div>
       </Route>
-      <Route exact path="/business">
-        <FormBusiness />
-      </Route>
-      <Route exact path="/volunteer">
-        <FormVolunteer />
-      </Route>
-      <Route exact path="/business/signup">
-        <SignUpBusiness />
-      </Route>
-      <Route exact path="/volunteer/signup">
-        <SignUpVolunteer />
-      </Route>
-      
       
       </Switch>
       
