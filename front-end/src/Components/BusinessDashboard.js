@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import BusinessPickupCard from './VolunteerPickupCard';
 import styled from 'styled-components';
 import {Field, ErrorMessage, Form, Formik} from 'formik';
-import axiosWithAuth from '../../auth/axiosWithAuth';
+import axiosWithAuth from './auth/axiosWithAuth';
 
 const Pickup = styled.div`
 background: red;
@@ -19,7 +19,7 @@ justify-content: space-between;
 export default function BusinessDashboard() {
     function handleSubmit(values) {
         axiosWithAuth()
-    .post('https://replate-eu.herokuapp/api/auth/pickups', values)
+    .post("/api/auth/pickups", values)
     .then(res => {
       console.log(res);
       
